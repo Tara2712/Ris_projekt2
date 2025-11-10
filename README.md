@@ -5,8 +5,7 @@
 
 ## Opis postopka izvedbe testa
 
-Za preverjanje **nefunkcionalnih zahtev** sistema (odzivnost, zmogljivost, stabilnost) je bil izveden **sistemski performance test** s pomočjo orodja **Apache JMeter 5.6.3**.  
-Test je bil izveden na lokalnem okolju, kjer teče **Spring Boot REST API** za upravljanje receptov.
+Za preverjanje nefunkcionalnih zahtev sistema (odzivnost, zmogljivost, stabilnost) je bil izveden sistemski performance test s pomočjo orodja **Apache JMeter 5.6.3**. Test je bil izveden na lokalnem okolju, kjer teče **Spring Boot REST API** za upravljanje receptov.
 
 Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obremenitvijo več uporabnikov.
 
@@ -14,9 +13,9 @@ Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obre
 - **Orodje:** Apache JMeter 5.6.3  
 - **HTTP metoda:** `GET`  
 - **URL:** `http://localhost:8080/api/recepti/all`  
-- **Število virtualnih uporabnikov (threads):** 50  
+- **Število virtualnih uporabnikov:** 50  
 - **Ramp-up čas:** 10 sekund  
-- **Število ponovitev (loop count):** 5  
+- **Število ponovitev:** 5  
 - **Skupno število zahtev:** 250  
 
 ### Uporabljeni JMeter elementi:
@@ -29,7 +28,7 @@ Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obre
 
 ---
 
-## 📊 Rezultati testa
+## Rezultati testa
 
 | Metrika | Vrednost |
 |----------|-----------|
@@ -43,35 +42,6 @@ Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obre
 | Preneseni podatki (Received KB/sec) | **157.41** |
 | Poslani podatki (Sent KB/sec) | **3.54** |
 
----
+Vse zahteve so bile uspešno izvedene brez napak (Error % = 0 %). Povprečen odzivni čas (36 ms) je nizek, kar pomeni hitro odzivnost strežnika. Standardna deviacija 9.9 ms kaže, da so odzivni časi zelo stabilni. Throughput 25 zahtev/sekundo pomeni, da sistem zmore visoko obremenitev. 
 
-## 📈 Interpretacija rezultatov
-
-- Vse zahteve so bile **uspešno izvedene** brez napak (Error % = 0 %).  
-- Povprečen odzivni čas (36 ms) je **izjemno nizek**, kar pomeni hitro odzivnost strežnika.  
-- Standardna deviacija 9.9 ms kaže, da so odzivni časi **zelo stabilni**.  
-- Throughput 25 zahtev/sekundo pomeni, da sistem **zmore visoko obremenitev**.  
-- Grafični rezultati potrjujejo **stabilno in zanesljivo delovanje** med celotnim testom.
-
----
-
-## ✅ Sklep
-
-Sistem za upravljanje receptov je **odziven, stabilen in zmogljiv** tudi pri 50 sočasnih uporabnikih.  
-Endpoint `/api/recepti/all` se v povprečju odziva v manj kot 50 ms, brez napak ali upočasnitev.  
-
-Aplikacija tako izpolnjuje **nefunkcionalne zahteve** glede hitrosti in stabilnosti.  
-Za nadaljnje preverjanje bi bilo smiselno izvesti:
-- **Stress test** z večjim številom uporabnikov (npr. 200–500)  
-- **Dolgotrajni stabilnostni test**, da se preveri delovanje skozi čas  
-
----
-
-## 🖼️ Posnetki rezultatov (opcijsko)
-
-Če dodajaš slike v mapo `screenshots/`, lahko vključiš naslednje:
-
-```markdown
-![Graph Results](screenshots/graph-results.png)
-![Summary Report](screenshots/summary-report.png)
-![View Results Table](screenshots/results-table.png)
+Sistem za upravljanje receptov je odziven, stabilen in zmogljiv tudi pri 50 sočasnih uporabnikih. Endpoint `/api/recepti/all` se v povprečju odziva v manj kot 50 ms, brez napak ali upočasnitev.  
