@@ -5,6 +5,7 @@
 
 ## Opis postopka izvedbe testa
 
+### Test: Stress test
 Za preverjanje nefunkcionalnih zahtev sistema (odzivnost, zmogljivost, stabilnost) je bil izveden sistemski performance test s pomočjo orodja **Apache JMeter 5.6.3**. Test je bil izveden na lokalnem okolju, kjer teče Spring Boot REST API za upravljanje receptov.
 
 Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obremenitvijo več uporabnikov.
