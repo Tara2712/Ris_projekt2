@@ -19,7 +19,7 @@ Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obre
 - **Število ponovitev:** 5  
 - **Skupno število zahtev:** 250
 
-- - **Število virtualnih uporabnikov:** 100  
+- **Število virtualnih uporabnikov:** 100  
 - **Ramp-up čas:** 5 sekund  
 - **Število ponovitev:** 5  
 - **Skupno število zahtev:** 500
