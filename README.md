@@ -63,3 +63,41 @@ Cilj testa je bil preveriti, kako se endpoint `/api/recepti/all` odziva pod obre
 Vse zahteve so bile uspešno izvedene brez napak (Error % = 0 %). Povprečen odzivni čas (36 ms) je nizek, kar pomeni hitro odzivnost strežnika. Standardna deviacija 9.9 ms kaže, da so odzivni časi zelo stabilni. Throughput 25 zahtev/sekundo pomeni, da sistem zmore visoko obremenitev. 
 
 Sistem za upravljanje receptov je odziven, stabilen in zmogljiv tudi pri 50 sočasnih uporabnikih. Endpoint `/api/recepti/all` se v povprečju odziva v manj kot 50 ms, brez napak ali upočasnitev.  
+
+
+# FlavourfulFinds — Cypress Test Report
+
+Ta dokument opisuje avtomatizirane teste, izvedene z **Cypress** za projekt *FlavourfulFinds*.  
+Testi preverjajo ključne funkcionalnosti spletne aplikacije: prijavo, iskanje, nalaganje receptov in brisanje receptov z administratorskimi pravicami.
+
+---
+
+## Uporabljena tehnologija
+
+| Orodje | Namen |
+|--------|-------|
+| **Cypress** | Avtomatizirano end-to-end testiranje |
+| **JavaScript / Fetch API** | Odjemalska komunikacija s backendom |
+| **Spring Boot (REST API)** | Backend storitve (avtentikacija, recepti, brisanje) |
+
+---
+
+## 1) Uspešna prijava uporabnika
+
+Test preveri, ali se uporabnik z veljavnimi podatki lahko uspešno prijavi, prejme sporočilo o uspehu, shrani v localStorage in je preusmerjen na domačo stran.
+
+## 2) Neuspešna prijava z napačnimi podatki
+
+Test preveri, ali aplikacija pravilno zavrne napačne prijavne podatke in prikaže sporočilo o napaki (Invalid email or password).
+
+## 3) Iskanje obstoječega recepta
+
+Test preveri delovanje iskalnika. Po vnosu iskalnega niza mora aplikacija prikazati recept, ki ustreza vnešenemu imenu.
+
+## 4) Prikaz receptov ob nalaganju strani
+
+Test preveri, ali aplikacija ob odpiranju domače strani samodejno naloži recepte iz API-ja in prikaže vsaj en recept v seznamu.
+
+## 5) Brisanje recepta (ADMIN)
+
+Test simulira prijavljenega administratorja, preveri prikaz gumba Delete, klikne nanj in potrdi brisanje. Na koncu preveri, da recept izgine iz seznama na strani.
