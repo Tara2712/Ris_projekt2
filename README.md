@@ -137,33 +137,33 @@ NOF / NOM – število atributov in metod
 
 | Metrika  | Mejna vrednost | Povprečje v projektu | Ocena                          |
 | -------- | -------------- | -------------------- | ------------------------------ |
-| **LOC**  | < 300          | 40–70                | ✔ dobro                        |
-| **CBO**  | < 14           | 5–15                 | ✔ večinoma dobro               |
-| **WMC**  | < 20           | 8–14                 | ✔ dobro                        |
-| **DIT**  | ≤ 5            | 1                    | ✔ idealno                      |
-| **RFC**  | < 50           | 10–30 (nekateri 120) | ⚠ nekateri razredi zelo visoki |
-| **LCOM** | < 0.5          | 0.7–0.8              | ⚠ nizka kohesija pri entitetah |
-| **NOM**  | 5–20           | 8–18                 | ✔ normalno                     |
-| **NOF**  | 0–10           | 1–9                  | ✔ normalno                     |
+| **LOC**  | < 300          | 40–70                |   dobro                        |
+| **CBO**  | < 14           | 5–15                 |   večinoma dobro               |
+| **WMC**  | < 20           | 8–14                 |   dobro                        |
+| **DIT**  | ≤ 5            | 1                    |   idealno                      |
+| **RFC**  | < 50           | 10–30 (nekateri 120) |   nekateri razredi zelo visoki |
+| **LCOM** | < 0.5          | 0.7–0.8              |   nizka kohesija pri entitetah |
+| **NOM**  | 5–20           | 8–18                 |   normalno                     |
+| **NOF**  | 0–10           | 1–9                  |   normalno                     |
 
 ---
 
 
-| Razred                  | LOC | Št. metod | CBO | Fan-in | Fan-out | WMC | LCOM | RFC |
-| ----------------------- | --- | --------- | --- | ------ | ------- | --- | ---- | --- |
-| **ReceptController**    | 210 | 11        | 14  | 6      | 9       | 18  | 0.62 | 32  |
-| **UporabnikController** | 240 | 12        | 15  | 7      | 10      | 20  | 0.70 | 35  |
-| **KomentarController**  | 180 | 9         | 12  | 5      | 7       | 14  | 0.58 | 27  |
-| **RisController**       | 60  | 2         | 4   | 1      | 3       | 3   | 0.30 | 6   |
-| **TestController**      | 70  | 3         | 3   | 1      | 2       | 4   | 0.25 | 7   |
+| Razred                  | LOC | Št. metod |
+| ----------------------- | --- | --------- |
+| **ReceptController**    | 210 | 11        |
+| **UporabnikController** | 240 | 12        |
+| **KomentarController**  | 180 | 9         |
+| **RisController**       | 60  | 2         |
+| **TestController**      | 70  | 3         |
 
 ---
 
-| Razred               | LOC | Št. metod | CBO | Fan-in | Fan-out | WMC | LCOM | RFC |
-| -------------------- | --- | --------- | --- | ------ | ------- | --- | ---- | --- |
-| **ReceptService**    | 260 | 10        | 13  | 12     | 8       | 22  | 0.55 | 40  |
-| **UporabnikService** | 230 | 9         | 11  | 14     | 6       | 19  | 0.60 | 36  |
-| **KomentarService**  | 200 | 8         | 10  | 10     | 5       | 16  | 0.48 | 29  |
+| Razred               | LOC | Št. metod |
+| -------------------- | --- | --------- |
+| **ReceptService**    | 260 | 10        |
+| **UporabnikService** | 230 | 9         |
+| **KomentarService**  | 200 | 8         |
 
 ---
 
