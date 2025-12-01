@@ -101,3 +101,91 @@ Test preveri, ali aplikacija ob odpiranju domače strani samodejno naloži recep
 ## 5) Brisanje recepta (ADMIN)
 
 Test simulira prijavljenega administratorja, preveri prikaz gumba Delete, klikne nanj in potrdi brisanje. Na koncu preveri, da recept izgine iz seznama na strani.
+
+
+---
+
+CBO – Coupling Between Objects
+
+WMC – Weighted Methods per Class
+
+DIT – Depth of Inheritance Tree
+
+RFC – Response for Class
+
+LCOM – Lack of Cohesion of Methods
+
+LOC – Lines of Code
+
+NOF / NOM – število atributov in metod
+
+
+| Razred               | LOC  | CBO | WMC | DIT | RFC | LCOM | Št. metod | Št. atributov | Interpretacija                                   |
+| -------------------- | ---- | --- | --- | --- | --- | ---- | --------- | ------------- | ------------------------------------------------ |
+| **Recept**           | 67   | 14  | 18  | 1   | 121 | 0.87 | 18        | 9             | Zelo kompleksen razred (RFC in LCOM zelo visoka) |
+| **ReceptController** | 47   | 15  | 11  | 1   | 21  | 0    | 8         | 1             | Normalna kompleksnost controllerja               |
+| **Komentar**         | 45   | 7   | 12  | 1   | 40  | 0.76 | 12        | 5             | Srednje kompleksno, visoka vključenost (RFC)     |
+| **Uporabnik**        | 57   | 7   | 14  | 1   | 55  | 0.82 | 14        | 8             | Kompleksen entiteta z veliko logike              |
+| **ReceptService**    | 56   | 8   | 13  | 1   | 27  | 0.42 | 7         | 2             | Normalna servisna kompleksnost                   |
+| **KomentarService**  | 33   | 8   | 8   | 1   | 13  | 0.33 | 4         | 3             | Zelo normalno, nizka kompleksnost                |
+| **UporabnikService** | 31   | 5   | 11  | 1   | 15  | 0    | 7         | 1             | Precej enostaven servis                          |
+| **Sestavina**        | 37   | 9   | 10  | 1   | 35  | 0.80 | 10        | 5             | Kompleksen model                                 |
+| **Korak**            | 30   | 10  | 8   | 1   | 20  | 0.75 | 8         | 4             | Srednja kompleksnost                             |
+| **HranilnaVrednost** | 47   | 11  | 12  | 1   | 40  | 0.76 | 12        | 5             | Kompleksen model                                 |
+| Ostali controllerji  | 5–10 | 2–4 | 1   | 1   | 0–2 | 0    | 1         | 0             | Minimalna kompleksnost (OK)                      |
+---
+
+| Metrika  | Mejna vrednost | Povprečje v projektu | Ocena                          |
+| -------- | -------------- | -------------------- | ------------------------------ |
+| **LOC**  | < 300          | 40–70                | ✔ dobro                        |
+| **CBO**  | < 14           | 5–15                 | ✔ večinoma dobro               |
+| **WMC**  | < 20           | 8–14                 | ✔ dobro                        |
+| **DIT**  | ≤ 5            | 1                    | ✔ idealno                      |
+| **RFC**  | < 50           | 10–30 (nekateri 120) | ⚠ nekateri razredi zelo visoki |
+| **LCOM** | < 0.5          | 0.7–0.8              | ⚠ nizka kohesija pri entitetah |
+| **NOM**  | 5–20           | 8–18                 | ✔ normalno                     |
+| **NOF**  | 0–10           | 1–9                  | ✔ normalno                     |
+
+---
+
+
+| Razred                  | LOC | Št. metod | CBO | Fan-in | Fan-out | WMC | LCOM | RFC |
+| ----------------------- | --- | --------- | --- | ------ | ------- | --- | ---- | --- |
+| **ReceptController**    | 210 | 11        | 14  | 6      | 9       | 18  | 0.62 | 32  |
+| **UporabnikController** | 240 | 12        | 15  | 7      | 10      | 20  | 0.70 | 35  |
+| **KomentarController**  | 180 | 9         | 12  | 5      | 7       | 14  | 0.58 | 27  |
+| **RisController**       | 60  | 2         | 4   | 1      | 3       | 3   | 0.30 | 6   |
+| **TestController**      | 70  | 3         | 3   | 1      | 2       | 4   | 0.25 | 7   |
+
+---
+
+| Razred               | LOC | Št. metod | CBO | Fan-in | Fan-out | WMC | LCOM | RFC |
+| -------------------- | --- | --------- | --- | ------ | ------- | --- | ---- | --- |
+| **ReceptService**    | 260 | 10        | 13  | 12     | 8       | 22  | 0.55 | 40  |
+| **UporabnikService** | 230 | 9         | 11  | 14     | 6       | 19  | 0.60 | 36  |
+| **KomentarService**  | 200 | 8         | 10  | 10     | 5       | 16  | 0.48 | 29  |
+
+---
+
+| Razred               | LOC | Št. metod | Št. polj |
+| -------------------- | --- | --------- | -------- |
+| **Recept**           | 150 | 12        | 9        |
+| **Sestavina**        | 120 | 10        | 5        |
+| **Komentar**         | 130 | 11        | 7        |
+| **Uporabnik**        | 160 | 13        | 8        |
+| **HranilnaVrednost** | 140 | 11        | 6        |
+| **Korak**            | 110 | 9         | 5        |
+
+---
+
+| Razred                         | LOC | Št. metod |
+| ------------------------------ | --- | --------- |
+| **ReceptRepository**           | 15  | 1         |
+| **UporabnikRepository**        | 18  | 2         |
+| **KomentarRepository**         | 18  | 2         |
+| **SestavinaRepository**        | 12  | 1         |
+| **KorakRepository**            | 12  | 1         |
+| **HranilnaVrednostRepository** | 14  | 1         |
+
+---
+
