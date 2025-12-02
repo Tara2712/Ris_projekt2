@@ -151,7 +151,7 @@ NOF / NOM – število atributov in metod
 
 | Razred                  | LOC | Št. metod |
 | ----------------------- | --- | --------- |
-| **ReceptController**    | 210 | 11        |
+| **ReceptController**    | 47  | 11        |
 | **UporabnikController** | 240 | 12        |
 | **KomentarController**  | 180 | 9         |
 | **RisController**       | 60  | 2         |
@@ -169,9 +169,9 @@ NOF / NOM – število atributov in metod
 
 | Razred               | LOC | Št. metod |
 | -------------------- | --- | --------- |
-| **Recept**           | 150 | 12        |
+| **Recept**           | 67  | 12        |
 | **Sestavina**        | 120 | 10        |
-| **Komentar**         | 130 | 11        |
+| **Komentar**         | 45  | 11        |
 | **Uporabnik**        | 160 | 13        |
 | **HranilnaVrednost** | 140 | 11        |
 | **Korak**            | 110 | 9         |
