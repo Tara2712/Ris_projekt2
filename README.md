@@ -167,14 +167,14 @@ NOF / NOM – število atributov in metod
 
 ---
 
-| Razred               | LOC | Št. metod | Št. polj |
-| -------------------- | --- | --------- | -------- |
-| **Recept**           | 150 | 12        | 9        |
-| **Sestavina**        | 120 | 10        | 5        |
-| **Komentar**         | 130 | 11        | 7        |
-| **Uporabnik**        | 160 | 13        | 8        |
-| **HranilnaVrednost** | 140 | 11        | 6        |
-| **Korak**            | 110 | 9         | 5        |
+| Razred               | LOC | Št. metod |
+| -------------------- | --- | --------- |
+| **Recept**           | 150 | 12        |
+| **Sestavina**        | 120 | 10        |
+| **Komentar**         | 130 | 11        |
+| **Uporabnik**        | 160 | 13        |
+| **HranilnaVrednost** | 140 | 11        |
+| **Korak**            | 110 | 9         |
 
 ---
 
